@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Demo</title>
+    <style>
+      .bg {
+        background-image: url("{{ url_for('static', filename='images/background.jpg') }}");
+      }
+    </style>
+  </head>
+  <body class="bg">
+    <div class="container fs-5">
+      <h1>Demo Customer Prosensity To Purchase</h1>
+      <br />
+      <form action="{{ url_for('predict') }}" method="post">
+        <div class="row">
+          <div class="col">
+            <p class="fw-bold">1. Check delivery detail</p>
+            <input
+              type="radio"
+              name="deliver_check"
+              id="deliver_checked"
+              value="1"
+              checked
+            />
+            <label for="deliver_checked">Yes</label> <br />
+            <input
+              type="radio"
+              name="deliver_check"
+              id="deliver_checked_no"
+              value="0"
+            />
+            <label for="deliver_checked_no">No</label> <br />
+            <br />
+          </div>
+
+          <div class="col">
+            <p class="fw-bold">2. Basket icon click</p>
+            <input
+              type="radio"
+              name="basket_icon_click"
+              id="basket_icon_clicked_yes"
+              value="1"
+              checked
+            />
+            <label for="basket_icon_clicked_yes">Yes</label> <br />
+            <input
+              type="radio"
+              name="basket_icon_click"
+              id="basket_icon_clicked_no"
+              value="0"
+            />
+            <label for="basket_icon_clicked_no">No</label> <br />
+            <br />
+          </div>
+
+          <div class="col">
+            <p class="fw-bold">3. Saw checkout</p>
+            <input
+              type="radio"
+              name="saw_checkout"
+              id="saw_checkout_yes"
+              value="1"
+              checked
+            />
+            <label for="saw_checkout_yes">Yes</label> <br />
+            <input
+              type="radio"
+              name="saw_checkout"
+              id="saw_checkout_yes_no"
+              value="0"
+            />
+            <label for="saw_checkout_yes_no">No</label> <br />
+            <br />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <p class="fw-bold">4. Basket add list click</p>
+            <input
+              type="radio"
+              name="basket_add_list"
+              id="basket_add_list_yes"
+              value="1"
+              checked
+            />
+            <label for="basket_add_list_yes">Yes</label> <br />
+            <input
+              type="radio"
+              name="basket_add_list"
+              id="basket_add_list_no"
+              value="0"
+            />
+            <label for="basket_add_list_no">No</label> <br />
+            <br />
+          </div>
+
+          <div class="col">
+            <p class="fw-bold">5. Basket add detail click</p>
+            <input
+              type="radio"
+              name="basket_add_detail"
+              id="basket_add_detail_yes"
+              value="1"
+              checked
+            />
+            <label for="basket_add_detail_yes">Yes</label> <br />
+            <input
+              type="radio"
+              name="basket_add_detail"
+              id="basket_add_detail_no"
+              value="0"
+            />
+            <label for="basket_add_detail_no">No</label> <br />
+            <br />
+          </div>
+
+          <div class="col">
+            <p class="fw-bold">6. List size dropdown click</p>
+            <input
+              type="radio"
+              name="list_size_dropdown"
+              id="list_size_dropdown_yes"
+              value="1"
+              checked
+            />
+            <label for="list_size_dropdown_yes">Yes</label> <br />
+            <input
+              type="radio"
+              name="list_size_dropdown"
+              id="list_size_dropdown_no"
+              value="0"
+            />
+            <label for="list_size_dropdown_no">No</label> <br />
+            <br />
+          </div>
+        </div>
+
+        <div class="class7">
+          <p class="fw-bold">7. Close minibasket click</p>
+          <input
+            type="radio"
+            name="closed_minibasket_click"
+            id="closed_minibasket_click_yes"
+            value="1"
+            checked
+          />
+          <label for="closed_minibasket_click_yes">Yes</label> <br />
+          <input
+            type="radio"
+            name="closed_minibasket_click"
+            id="closed_minibasket_click_no"
+            value="0"
+          />
+          <label for="closed_minibasket_click_no">No</label> <br />
+          <br />
+        </div>
+
+        <input type="submit" value="Submit" />
+      </form>
+      <p style="color: red; font-size: 20px">{{ result }}</p>
+    </div>
+  </body>
+</html>
