@@ -9,7 +9,7 @@ with open('model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
